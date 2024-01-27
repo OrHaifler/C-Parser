@@ -1,0 +1,151 @@
+********FIRST TEST********
+
+gcc -g -Wall -ansi -pedantic mainmat.c mymat.c -o main
+./main
+
+Enter your line:
+
+read_mat MAT_A,1,2,3,4,5,6,7,8,9
+
+Your input: read_mat MAT_A,1,2,3,4,5,6,7,8,9
+
+
+Enter your line:
+
+print_mat MAT_A
+
+Your input: print_mat MAT_A
+
+1.00	2.00	3.00	4.00	
+5.00	6.00	7.00	8.00	
+9.00	0.00	0.00	0.00	
+0.00	0.00	0.00	0.00	
+
+Enter your line:
+
+read_mat MAT_B,6,5,4,3,2,1,1,7 
+
+Your input: read_mat MAT_B,6,5,4,3,2,1,1,7
+
+
+Enter your line:
+
+print_mat MAT_B
+
+Your input: print_mat MAT_B
+
+6.00	5.00	4.00	3.00	
+2.00	1.00	1.00	7.00	
+0.00	0.00	0.00	0.00	
+0.00	0.00	0.00	0.00	
+
+Enter your line:
+
+add_mat MAT_A,MAT_B,MAT_C
+
+Your input: add_mat MAT_A,MAT_B,MAT_C
+
+
+Enter your line:
+
+print_mat MAT_C
+
+Your input: print_mat MAT_C
+
+7.00	7.00	7.00	7.00	
+7.00	7.00	8.00	15.00	
+9.00	0.00	0.00	0.00	
+0.00	0.00	0.00	0.00	
+
+Enter your line:
+
+read_mat MAT_A,1,-1,1,1,1 
+
+Your input: read_mat MAT_A,1,-1,1,1,1
+
+
+Enter your line:
+
+print_mat MAT_A
+
+Your input: print_mat MAT_A
+
+1.00	-1.00	1.00	1.00	
+1.00	0.00	0.00	0.00	
+0.00	0.00	0.00	0.00	
+0.00	0.00	0.00	0.00
+
+Enter your line:
+
+stop
+
+Your input: stop
+
+
+
+********SECOND TEST********
+
+
+gcc -g -Wall -ansi -pedantic mainmat.c mymat.c -o main
+./main
+
+Enter your line:
+
+read_mat MAT_A,1,-1,2.45,1,1,1
+
+Your input: read_mat MAT_A,1,-1,2.45,1,1,1
+
+
+Enter your line:
+
+mul_scalar MAT_A,2,MAT_A
+
+Your input: mul_scalar MAT_A,2,MAT_A
+
+
+Enter your line:
+
+print_mat MAT_A
+
+Your input: print_mat MAT_A
+
+2.00	-2.00	4.90	2.00	
+2.00	2.00	0.00	0.00	
+0.00	0.00	0.00	0.00	
+0.00	0.00	0.00	0.00	
+
+Enter your line:
+
+read_mat MAT_B,1,6,4,3,2,4,5
+
+Your input: read_mat MAT_B,1,6,4,3,2,4,5
+
+
+Enter your line:
+
+mul_mat MAT_A,MAT_B,MAT_D
+
+Your input: mul_mat MAT_A,MAT_B,MAT_D
+
+
+Enter your line:
+
+print_mat MAT_D
+
+Your input: print_mat MAT_D
+
+-2.00	4.00	-2.00	6.00	
+6.00	20.00	18.00	6.00	
+0.00	0.00	0.00	0.00	
+0.00	0.00	0.00	0.00	
+
+Enter your line:
+
+stop
+
+Your input: stop
+
+
+
+
+

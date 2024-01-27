@@ -1,0 +1,92 @@
+********FIRST TEST********
+
+gcc -g -Wall -ansi -pedantic mainmat.c mymat.c -o main
+./main
+
+Enter your line:
+
+read_Mat MAT_A,MAT_B,MAT_C
+
+Your input: read_Mat MAT_A,MAT_B,MAT_C
+
+Undefined command name
+
+Enter your line:
+
+read_mat MAT_G,1,2,3,4
+
+Your input: read_mat MAT_G,1,2,3,4
+
+Undefined matrix name
+
+Enter your line:
+
+mul_scalar MAT_A,a,MAT_B
+
+Your input: mul_scalar MAT_A,a,MAT_B
+
+Invalid real argument
+
+Enter your line:
+
+add_mat MAT_A,2,MAT_B
+
+Your input: add_mat MAT_A,2,MAT_B
+
+Undefined matrix name
+
+Enter your line:
+
+print_mat
+
+Your input: print_mat
+
+Missing arguments
+
+Enter your line:
+
+stop
+
+Your input: stop
+
+********SECOND TEST********
+
+
+gcc -g -Wall -ansi -pedantic mainmat.c mymat.c -o main
+./main
+
+Enter your line:
+
+read_mat MAT_A,a,1,2,3,4,5
+
+Your input: read_mat MAT_A,a,1,2,3,4,5
+
+Invalid argument
+
+Enter your line:
+
+mul_mat MAT_A,MAT_B
+
+Enter your line:
+
+sub_MaaT MAT_A,MAT_B,MAT_C
+
+Your input: sub_MaaT MAT_A,MAT_B,MAT_C
+
+Undefined command name
+
+Enter your line:
+
+print_mat, MAT_A    
+
+Your input: print_mat, MAT_A
+
+Illegal comma
+
+Enter your line:
+
+stop
+
+Your input: stop
+
+
