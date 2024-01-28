@@ -25,10 +25,7 @@ typedef struct
     int args;
 } ParsedLine;
 
-typedef struct
-{
-    void (*parse)(ParsedLine*, Matrix**);
-} TypeParser;
+typedef void (*TypeParser)(ParsedLine*, Matrix**);
 
 
 char* commands[] = {"read_mat", "print_mat", "mul_scalar", "trans_mat", "add_mat", "sub_mat", "mul_mat"};
@@ -616,7 +613,7 @@ int check_type(ParsedLine* line) {
 
 
 int main() {
-    TypeParser types[] = {{&parse_one}, {&parse_two}, {&parse_three}, {&parse_four}, {&parse_five}};
+    TypeParser types[] = {&parse_one, &parse_two, &parse_three, &parse_four, &parse_five};
     Matrix* MAT_A = (Matrix*)malloc(sizeof(Matrix));
     Matrix* MAT_B = (Matrix*)malloc(sizeof(Matrix));
     Matrix* MAT_C = (Matrix*)malloc(sizeof(Matrix));
@@ -671,9 +668,8 @@ int main() {
         len = getline(&input, &size, stdin);
 
         if(len < 0) {
-            puts("Couldn't read the input");
-            free(input);
-            continue;
+            puts("Invalid input/EOF");
+            return 0;
         } else {
             strncpy(line->input, input, strlen(input) - 1);
             line->input[strlen(input) - 1] = '\0';
@@ -684,6 +680,8 @@ int main() {
 
 
         remove_spaces(line);
+
+	if(!strlen(line->parsed)) continue;
 
         if(!strcmp(line->parsed,"stop")) return 0;
 
@@ -704,7 +702,7 @@ int main() {
         if(line->type > 2) line->args = 2;
         if(line->type == 5) line->args = 3;
 
-        types[line->type - 1].parse(line, arr);
+        types[line->type - 1](line, arr);
 
         
         if(!line->valid) {
